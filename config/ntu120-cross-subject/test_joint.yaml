@@ -1,0 +1,26 @@
+# feeder
+feeder: feeders.feeder.Feeder
+test_feeder_args:
+  data_path: ./data/NTU-RGB-D_120/xsub-1/val_data.npy
+  label_path: ./data/NTU-RGB-D_120/xsub-1/val_label.pkl
+  debug: False
+
+# model
+model: model.agcn.Model
+model_args:
+  num_class: 120
+  num_point: 25
+  num_person: 2
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+# test
+phase: test
+device: [0,1]
+test_batch_size: 128
+weights: ./runs/ntu120_cs_agcn_joint_sw-46-40733.pt
+
+work_dir: ./work_dir/ntu120/xsub/agcn_test_joint_sw
+model_saved_name: ./runs/ntu120_cs_agcn_test_joint_sw
+save_score: True
