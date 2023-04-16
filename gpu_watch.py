@@ -14,7 +14,7 @@ addressed_eamil = '2489925838@qq.com'
 def mail():
     try:
         msg = MIMEText('GPU空闲！请注意！', 'plain', 'utf-8')
-        msg['From'] = Header('Wensong Chan', 'utf-8')
+        msg['From'] = Header('xxx', 'utf-8')
         msg['To'] = Header('Vincent', 'utf-8')
         msg['Subject'] = Header('发送GPU空闲通知', 'utf-8')
 
